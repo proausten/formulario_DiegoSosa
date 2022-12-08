@@ -1,0 +1,54 @@
+<h1 class="text-center">Formulario Incripcion</h1>
+
+<div class="p-4">
+    <form class="row g-3 " [formGroup]="formulariouno" (ngSubmit)="submit()">
+        <div class="col-md-6">
+            <label for="inputName" class="form-label">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre" required>
+            <span *ngIf="this.formulariouno.get('nombre')?.errors?.['required']">(El nombre no puede quedar
+                vacio)</span>
+            <span *ngIf="this.formulariouno.get('nombre')?.errors?.['minlength']">(Min 5 caracteres)</span>
+        </div>
+        <div class="col-md-6 ">
+            <label for="inputLastname" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="" formControlName="apellido">
+            <span *ngIf="this.formulariouno.get('apellido')?.errors?.['required']">(El apellido no puede quedar
+                vacio)</span>
+            <span *ngIf="this.formulariouno.get('apellido')?.errors?.['minlength']">(Min 5 caracteres)</span>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Direccion</label>
+            <input type="text" class="form-control" formControlName="direccion">
+            <span *ngIf="this.formulariouno.get('direccion')?.errors?.['required']">(La direccion no puede quedar
+                vacia)</span>
+            <span *ngIf="this.formulariouno.get('direccion')?.errors?.['minlength']">(Min 5 caracteres)</span>
+        </div>
+        <div class="col-12">
+            <label for="inputDni" class="form-label">Dni</label>
+            <input type="text" class="form-control" formControlName="dni">
+            <span *ngIf="this.formulariouno.get('dni')?.errors?.['required']">(El dni no puede quedar
+                vacio)</span>
+            <span *ngIf="this.formulariouno.get('dni')?.errors?.['minlength']">(Dni o cedula)</span>
+        </div>
+        <div class="col-12">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="text" class="form-control" formControlName="email">
+            <span *ngIf="this.formulariouno.get('email')?.errors?.['required']">(El email no puede quedar
+                vacio)</span>
+            <span *ngIf="this.formulariouno.get('email')?.errors?.['minlength']">(Min 5 caracteres)</span>
+        </div>
+
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary p ">Enviar</button>
+        </div>
+
+    </form>
+
+
+
+
+
+
+
+</div>
